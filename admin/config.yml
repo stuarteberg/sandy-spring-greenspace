@@ -1,0 +1,137 @@
+# Decap CMS Configuration
+# For local development, use: npx decap-server
+
+# Backend configuration
+# For production with Netlify:
+# backend:
+#   name: git-gateway
+#   branch: main
+
+# For local development:
+backend:
+  name: proxy
+  proxy_url: http://localhost:8081/api/v1
+
+# Media files location
+media_folder: "public/images"
+public_folder: "/images"
+
+# Site URL for previews
+site_url: http://localhost:4321
+
+# Editorial workflow for draft/review/publish
+publish_mode: editorial_workflow
+
+# Collections define the content structure
+collections:
+  # Site Settings
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "general"
+        label: "General Settings"
+        file: "src/content/settings/general.json"
+        fields:
+          - { label: "Site Title", name: "title", widget: "string", default: "Greater Sandy Spring Green Space" }
+          - { label: "Tagline", name: "tagline", widget: "string", default: "Preserving Open Space in the Greater Sandy Spring Area" }
+          - { label: "Contact Email", name: "email", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string", required: false }
+          - label: "Address"
+            name: "address"
+            widget: "object"
+            fields:
+              - { label: "Street/PO Box", name: "street", widget: "string" }
+              - { label: "City", name: "city", widget: "string" }
+              - { label: "State", name: "state", widget: "string" }
+              - { label: "ZIP", name: "zip", widget: "string" }
+
+  # Board Members
+  - name: "board"
+    label: "Board Members"
+    folder: "src/content/board"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Role", name: "role", widget: "select", options: ["President", "Vice President", "Secretary", "Treasurer", "Director"] }
+      - { label: "Bio", name: "bio", widget: "text" }
+      - { label: "Photo", name: "photo", widget: "image", required: false }
+      - { label: "Order", name: "order", widget: "number", default: 10 }
+
+  # Newsletters
+  - name: "newsletters"
+    label: "Newsletters"
+    folder: "src/content/newsletters"
+    create: true
+    slug: "{{year}}-{{month}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "PDF File", name: "pdf", widget: "file", required: false }
+      - { label: "Content", name: "body", widget: "markdown", required: false }
+
+  # Easement Properties
+  - name: "easements"
+    label: "Our Easements"
+    folder: "src/content/easements"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Property Name", name: "name", widget: "string" }
+      - { label: "Acres", name: "acres", widget: "number" }
+      - { label: "Year Protected", name: "year", widget: "number" }
+      - { label: "Description", name: "description", widget: "text" }
+      - label: "Features"
+        name: "features"
+        widget: "list"
+        field: { label: "Feature", name: "feature", widget: "string" }
+      - { label: "Photo", name: "photo", widget: "image", required: false }
+
+  # Pages (for editing page content)
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "home"
+        label: "Home Page"
+        file: "src/content/pages/home.json"
+        fields:
+          - { label: "Hero Title", name: "heroTitle", widget: "string" }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" }
+          - label: "Stats"
+            name: "stats"
+            widget: "object"
+            fields:
+              - { label: "Acres Protected", name: "acres", widget: "string" }
+              - { label: "Years of Service", name: "years", widget: "string" }
+              - { label: "Conservation Easements", name: "easements", widget: "string" }
+          - { label: "About Section", name: "aboutText", widget: "markdown" }
+
+      - name: "mission"
+        label: "Mission Page"
+        file: "src/content/pages/mission.json"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Page Subtitle", name: "subtitle", widget: "text" }
+          - { label: "Content", name: "content", widget: "markdown" }
+
+      - name: "easements-page"
+        label: "Easements Page"
+        file: "src/content/pages/easements.json"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Page Subtitle", name: "subtitle", widget: "text" }
+          - { label: "Content", name: "content", widget: "markdown" }
+
+  # Conservation Links
+  - name: "links"
+    label: "Conservation Links"
+    folder: "src/content/links"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Organization Name", name: "name", widget: "string" }
+      - { label: "URL", name: "url", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Category", name: "category", widget: "select", options: ["National Organizations", "Maryland Organizations", "Government Resources", "Educational Resources"] }
+      - { label: "Order", name: "order", widget: "number", default: 10 }
