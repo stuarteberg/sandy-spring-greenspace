@@ -1,0 +1,9 @@
+  1. I have website currently hosted at https://sandyspringgreenspace.org which I would like to revamp. I think it's currently generated with Wordpress, but I'm not married to that choice. What would you
+  recommend? Let's work on a prototype that I can view on my local machine. I want it to be easy for non-developers to edit the content without editing raw html. Give me some suggestions so we can make a
+  plan together.
+
+  2. Let's go with the recommendation. Also, I'm interested to see an updated visual style.
+
+  3. Does this site require a web server beyond plain file hosting? Is it fully static?
+
+  4. yes. I want something I can upload to github pages as a quick test.

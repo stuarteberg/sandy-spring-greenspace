@@ -1,0 +1,7 @@
+{
+  "name": "Sample Easement Property",
+  "acres": 50,
+  "year": 2020,
+  "description": "A beautiful mix of forest and farmland along a tributary of the Patuxent River.",
+  "features": ["Mature hardwood forest", "Agricultural fields", "Stream corridor"]
+}

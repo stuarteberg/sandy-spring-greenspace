@@ -1,0 +1,332 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Home">
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Preserving Open Space in the Greater Sandy Spring Area</h1>
+      <p>We help landowners protect their property through conservation easements, preserving natural lands for future generations while providing potential tax benefits.</p>
+      <div class="hero-buttons">
+        <a href="/easements" class="btn btn-primary">Learn About Easements</a>
+        <a href="/join" class="btn btn-outline">Become a Member</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="hero-image-placeholder">
+        <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="300" fill="#e8f5e9"/>
+          <path d="M0 250 Q100 200 200 220 T400 200 V300 H0 Z" fill="#4a7c5c"/>
+          <path d="M0 270 Q100 240 200 250 T400 230 V300 H0 Z" fill="#2d5a3d"/>
+          <circle cx="320" cy="80" r="40" fill="#ffd54f" opacity="0.8"/>
+          <path d="M100 250 L100 180 L130 140 L160 180 L160 250" fill="#2d5a3d"/>
+          <path d="M250 250 L250 200 L270 170 L290 200 L290 250" fill="#1e3d29"/>
+          <path d="M180 250 L180 220 L195 195 L210 220 L210 250" fill="#4a7c5c"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 4L4 20H10V42H38V20H44L24 4Z" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M18 42V28H30V42" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3>Protect Your Land</h3>
+          <p>Conservation easements allow you to permanently protect your property's natural, agricultural, or historic features while retaining ownership.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M24 14V24L32 28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>For Future Generations</h3>
+          <p>Your protected land will remain undeveloped forever, creating a lasting legacy for your family and community.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="10" width="36" height="28" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M6 18H42" stroke="currentColor" stroke-width="2"/>
+              <path d="M14 26H26" stroke="currentColor" stroke-width="2"/>
+              <path d="M14 32H22" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3>Tax Benefits</h3>
+          <p>Donating a conservation easement may qualify you for significant federal and state tax deductions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-preview">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content">
+          <h2>About Greater Sandy Spring Green Space</h2>
+          <p>Greater Sandy Spring Green Space, Inc. (GSSGS) is a 501(c)(3) nonprofit land trust dedicated to preserving the rural character and natural beauty of the Greater Sandy Spring area in Montgomery County, Maryland.</p>
+          <p>Since our founding, we have worked with landowners to protect hundreds of acres of forests, farmland, and open spaces through conservation easements.</p>
+          <a href="/mission" class="btn btn-secondary">Learn About Our Mission</a>
+        </div>
+        <div class="about-stats">
+          <div class="stat">
+            <span class="stat-number">500+</span>
+            <span class="stat-label">Acres Protected</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">20+</span>
+            <span class="stat-label">Years of Service</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">15+</span>
+            <span class="stat-label">Conservation Easements</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready to Protect Your Land?</h2>
+        <p>Contact us to learn how a conservation easement can help preserve your property for future generations.</p>
+        <a href="/join#contact" class="btn btn-primary">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 70vh;
+    background: linear-gradient(135deg, var(--color-forest-dark) 0%, var(--color-forest) 100%);
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--spacing-xl);
+    color: var(--color-white);
+  }
+
+  .hero-content h1 {
+    color: var(--color-white);
+    font-size: 3rem;
+    margin: 0 0 var(--spacing-md);
+  }
+
+  .hero-content p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin: 0 0 var(--spacing-md);
+    line-height: 1.7;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+  }
+
+  .hero .btn-outline {
+    border-color: var(--color-white);
+    color: var(--color-white);
+  }
+
+  .hero .btn-outline:hover {
+    background: var(--color-white);
+    color: var(--color-forest-dark);
+  }
+
+  .hero-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-cream);
+  }
+
+  .hero-image-placeholder {
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-image-placeholder svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 900px) {
+    .hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+
+    .hero-content {
+      padding: var(--spacing-lg) var(--spacing-md);
+      text-align: center;
+    }
+
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+
+    .hero-buttons {
+      justify-content: center;
+    }
+
+    .hero-image {
+      height: 300px;
+    }
+  }
+
+  .features {
+    padding: var(--spacing-xl) 0;
+    background: var(--color-white);
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+  }
+
+  @media (max-width: 768px) {
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .feature-card {
+    text-align: center;
+    padding: var(--spacing-md);
+  }
+
+  .feature-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto var(--spacing-sm);
+    color: var(--color-forest);
+  }
+
+  .feature-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .feature-card h3 {
+    margin: 0 0 var(--spacing-sm);
+  }
+
+  .feature-card p {
+    color: var(--color-text-light);
+    margin: 0;
+  }
+
+  .about-preview {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .about-content h2 {
+    margin: 0 0 var(--spacing-sm);
+  }
+
+  .about-content p {
+    margin: 0 0 var(--spacing-sm);
+    color: var(--color-text-light);
+  }
+
+  .about-content .btn {
+    margin-top: var(--spacing-sm);
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+  }
+
+  @media (max-width: 768px) {
+    .about-stats {
+      margin-top: var(--spacing-md);
+    }
+  }
+
+  .stat {
+    text-align: center;
+    padding: var(--spacing-md);
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+  }
+
+  .stat-number {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-forest);
+  }
+
+  .stat-label {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+    margin-top: 0.25rem;
+  }
+
+  .cta {
+    padding: var(--spacing-xl) 0;
+    background: var(--color-meadow);
+  }
+
+  .cta-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .cta-content h2 {
+    color: var(--color-white);
+    margin: 0 0 var(--spacing-sm);
+  }
+
+  .cta-content p {
+    color: var(--color-white);
+    opacity: 0.9;
+    margin: 0 0 var(--spacing-md);
+    font-size: 1.125rem;
+  }
+
+  .cta .btn-primary {
+    background: var(--color-forest-dark);
+  }
+
+  .cta .btn-primary:hover {
+    background: var(--color-forest);
+  }
+</style>

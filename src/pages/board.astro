@@ -1,0 +1,162 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const boardMembers = [
+  { name: "Board Member", role: "President", bio: "Brief biography will go here." },
+  { name: "Board Member", role: "Vice President", bio: "Brief biography will go here." },
+  { name: "Board Member", role: "Secretary", bio: "Brief biography will go here." },
+  { name: "Board Member", role: "Treasurer", bio: "Brief biography will go here." },
+  { name: "Board Member", role: "Director", bio: "Brief biography will go here." },
+  { name: "Board Member", role: "Director", bio: "Brief biography will go here." },
+];
+---
+
+<BaseLayout title="Board of Directors">
+  <section class="page-header">
+    <div class="container">
+      <h1>Board of Directors</h1>
+      <p>Meet the dedicated volunteers who guide Greater Sandy Spring Green Space.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container">
+      <div class="intro">
+        <p>Our Board of Directors is composed of local residents who volunteer their time and expertise to advance land conservation in the Greater Sandy Spring area. Board members come from diverse professional backgrounds but share a common commitment to preserving our community's natural heritage.</p>
+      </div>
+
+      <div class="board-grid">
+        {boardMembers.map((member) => (
+          <div class="board-card">
+            <div class="board-avatar">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="40" r="38" fill="#e8f5e9"/>
+                <circle cx="40" cy="30" r="12" fill="#4a7c5c"/>
+                <path d="M20 70 C20 52 60 52 60 70" fill="#4a7c5c"/>
+              </svg>
+            </div>
+            <h3>{member.name}</h3>
+            <span class="role">{member.role}</span>
+            <p>{member.bio}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="join-board">
+        <h2>Interested in Joining Our Board?</h2>
+        <p>We're always looking for dedicated community members who share our passion for land conservation. If you're interested in serving on our Board of Directors, please get in touch.</p>
+        <a href="/join#contact" class="btn btn-primary">Contact Us</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--color-forest-dark) 0%, var(--color-forest) 100%);
+    color: var(--color-white);
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    color: var(--color-white);
+    margin: 0 0 var(--spacing-sm);
+  }
+
+  .page-header p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin: 0;
+  }
+
+  .content {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .intro {
+    max-width: 800px;
+    margin: 0 auto var(--spacing-lg);
+    text-align: center;
+  }
+
+  .intro p {
+    font-size: 1.125rem;
+    color: var(--color-text-light);
+    line-height: 1.8;
+  }
+
+  .board-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+  }
+
+  @media (max-width: 900px) {
+    .board-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .board-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .board-card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+  }
+
+  .board-avatar {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--spacing-sm);
+  }
+
+  .board-avatar svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .board-card h3 {
+    margin: 0 0 0.25rem;
+    font-size: 1.25rem;
+  }
+
+  .role {
+    display: block;
+    color: var(--color-meadow);
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .board-card p {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  .join-board {
+    margin-top: var(--spacing-xl);
+    background: var(--color-cream);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    text-align: center;
+  }
+
+  .join-board h2 {
+    margin: 0 0 var(--spacing-sm);
+  }
+
+  .join-board p {
+    color: var(--color-text-light);
+    max-width: 600px;
+    margin: 0 auto var(--spacing-md);
+  }
+</style>

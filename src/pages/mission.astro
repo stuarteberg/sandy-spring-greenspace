@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Our Mission">
+  <section class="page-header">
+    <div class="container">
+      <h1>Our Mission</h1>
+      <p>Preserving the natural beauty and rural character of the Greater Sandy Spring area.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container">
+      <div class="content-grid">
+        <div class="main-content">
+          <h2>Who We Are</h2>
+          <p>Greater Sandy Spring Green Space, Inc. (GSSGS) is a 501(c)(3) nonprofit land trust dedicated to preserving open space in the Greater Sandy Spring area of Montgomery County, Maryland.</p>
+
+          <p>Founded by a group of concerned citizens who recognized the importance of protecting our region's natural heritage, GSSGS works with willing landowners to permanently protect their property through conservation easements.</p>
+
+          <h2>Our Goals</h2>
+          <ul>
+            <li>Preserve the rural character and natural beauty of the Greater Sandy Spring area</li>
+            <li>Protect forests, farmland, wetlands, and other ecologically significant lands</li>
+            <li>Maintain wildlife habitats and corridors</li>
+            <li>Protect water quality in local streams and the Chesapeake Bay watershed</li>
+            <li>Educate the community about the importance and benefits of land conservation</li>
+            <li>Assist landowners in understanding their conservation options</li>
+          </ul>
+
+          <h2>Why Land Conservation Matters</h2>
+          <p>Montgomery County has experienced tremendous growth over the past several decades. While development brings many benefits, it also puts pressure on our remaining open spaces, farms, and natural areas.</p>
+
+          <p>Conservation easements provide a way for landowners to permanently protect their property from development while retaining ownership and, in many cases, receiving significant tax benefits. Protected lands provide:</p>
+
+          <ul>
+            <li><strong>Clean water</strong> - Forests and wetlands filter pollutants and protect streams</li>
+            <li><strong>Wildlife habitat</strong> - Connected green spaces allow wildlife to thrive</li>
+            <li><strong>Local food</strong> - Protected farmland supports local agriculture</li>
+            <li><strong>Community character</strong> - Open spaces maintain our area's rural heritage</li>
+            <li><strong>Climate resilience</strong> - Trees and natural areas sequester carbon and reduce flooding</li>
+          </ul>
+
+          <h2>Our Service Area</h2>
+          <p>GSSGS focuses on the Greater Sandy Spring area of Montgomery County, Maryland, including the communities of Sandy Spring, Ashton, Brookeville, Olney, and surrounding areas. This region retains much of its historic rural character and contains significant natural resources worthy of protection.</p>
+        </div>
+
+        <aside class="sidebar">
+          <div class="sidebar-card">
+            <h3>Get Involved</h3>
+            <p>There are many ways to support land conservation in our community.</p>
+            <ul>
+              <li><a href="/join">Become a member</a></li>
+              <li><a href="/join#donate">Make a donation</a></li>
+              <li><a href="/easements">Learn about easements</a></li>
+              <li><a href="/newsletters">Read our newsletters</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-card highlight">
+            <h3>Interested in Protecting Your Land?</h3>
+            <p>We're here to help you explore your conservation options.</p>
+            <a href="/join#contact" class="btn btn-primary">Contact Us</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--color-forest-dark) 0%, var(--color-forest) 100%);
+    color: var(--color-white);
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    color: var(--color-white);
+    margin: 0 0 var(--spacing-sm);
+  }
+
+  .page-header p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin: 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .content {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: var(--spacing-lg);
+  }
+
+  @media (max-width: 900px) {
+    .content-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .main-content h2 {
+    margin-top: var(--spacing-lg);
+  }
+
+  .main-content h2:first-child {
+    margin-top: 0;
+  }
+
+  .main-content p {
+    color: var(--color-text-light);
+    line-height: 1.8;
+  }
+
+  .main-content ul {
+    color: var(--color-text-light);
+    line-height: 1.8;
+    padding-left: 1.5rem;
+  }
+
+  .main-content li {
+    margin-bottom: 0.5rem;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .sidebar-card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-md);
+  }
+
+  .sidebar-card.highlight {
+    background: var(--color-forest);
+    color: var(--color-white);
+  }
+
+  .sidebar-card.highlight h3 {
+    color: var(--color-white);
+  }
+
+  .sidebar-card.highlight .btn-primary {
+    background: var(--color-white);
+    color: var(--color-forest);
+  }
+
+  .sidebar-card.highlight .btn-primary:hover {
+    background: var(--color-cream);
+  }
+
+  .sidebar-card h3 {
+    margin: 0 0 var(--spacing-sm);
+    font-size: 1.25rem;
+  }
+
+  .sidebar-card p {
+    margin: 0 0 var(--spacing-sm);
+    font-size: 0.95rem;
+  }
+
+  .sidebar-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .sidebar-card li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--color-cream);
+  }
+
+  .sidebar-card li:last-child {
+    border-bottom: none;
+  }
+</style>

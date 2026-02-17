@@ -1,0 +1,333 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Join Us">
+  <section class="page-header">
+    <div class="container">
+      <h1>Join Us</h1>
+      <p>Support land conservation in the Greater Sandy Spring area.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container">
+      <div class="intro">
+        <p>Greater Sandy Spring Green Space relies on the support of our members and donors to continue our mission of preserving open space. There are many ways you can help protect the lands we all treasure.</p>
+      </div>
+
+      <div class="options-grid">
+        <div class="option-card">
+          <div class="option-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="32" cy="20" r="12" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M12 56 C12 40 52 40 52 56" stroke="currentColor" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+          <h2>Become a Member</h2>
+          <p>Join our community of conservation-minded individuals and families. Members receive our newsletter, invitations to special events, and the satisfaction of knowing they're helping protect local lands.</p>
+          <div class="membership-levels">
+            <div class="level">
+              <span class="amount">$35</span>
+              <span class="label">Individual</span>
+            </div>
+            <div class="level">
+              <span class="amount">$50</span>
+              <span class="label">Family</span>
+            </div>
+            <div class="level">
+              <span class="amount">$100</span>
+              <span class="label">Supporter</span>
+            </div>
+            <div class="level">
+              <span class="amount">$250+</span>
+              <span class="label">Patron</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="option-card" id="donate">
+          <div class="option-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M32 56 C32 56 8 40 8 24 C8 14 18 8 32 20 C46 8 56 14 56 24 C56 40 32 56 32 56Z" stroke="currentColor" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+          <h2>Make a Donation</h2>
+          <p>Your tax-deductible gift supports our land protection efforts, stewardship of existing easements, and community education programs.</p>
+          <p>As a 501(c)(3) nonprofit organization, all donations to GSSGS are tax-deductible to the extent allowed by law.</p>
+          <a href="https://www.paypal.com/donate" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Donate via PayPal</a>
+          <p class="small">Or mail a check to:<br>GSSGS, P.O. Box 253, Sandy Spring, MD 20860</p>
+        </div>
+
+        <div class="option-card">
+          <div class="option-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="16" width="48" height="32" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M8 24 L32 40 L56 24" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <h2>Volunteer</h2>
+          <p>We're always looking for volunteers to help with events, outreach, and administrative tasks. If you have skills in areas like communications, finance, law, or land management, we'd love to hear from you.</p>
+          <a href="#contact" class="btn btn-secondary">Get Involved</a>
+        </div>
+
+        <div class="option-card">
+          <div class="option-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M32 8 C32 8 16 24 16 36 C16 44.8 23.2 52 32 52 C40.8 52 48 44.8 48 36 C48 24 32 8 32 8Z" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M32 20 L32 40 M24 32 L40 32" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <h2>Protect Your Land</h2>
+          <p>If you own property in the Greater Sandy Spring area and are interested in permanent protection through a conservation easement, we'd be honored to discuss your options with you.</p>
+          <a href="/easements" class="btn btn-outline">Learn About Easements</a>
+        </div>
+      </div>
+
+      <div class="contact-section" id="contact">
+        <h2>Contact Us</h2>
+        <p>Have questions? Want to learn more about how you can help? We'd love to hear from you.</p>
+
+        <div class="contact-grid">
+          <form class="contact-form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject">
+                <option value="general">General Inquiry</option>
+                <option value="membership">Membership</option>
+                <option value="donation">Donation</option>
+                <option value="easement">Conservation Easement</option>
+                <option value="volunteer">Volunteering</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+
+          <div class="contact-info">
+            <div class="info-item">
+              <h3>Mailing Address</h3>
+              <p>Greater Sandy Spring Green Space, Inc.<br>
+              P.O. Box 253<br>
+              Sandy Spring, MD 20860</p>
+            </div>
+            <div class="info-item">
+              <h3>Tax Information</h3>
+              <p>GSSGS is a 501(c)(3) nonprofit organization. Donations are tax-deductible to the extent allowed by law.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--color-forest-dark) 0%, var(--color-forest) 100%);
+    color: var(--color-white);
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    color: var(--color-white);
+    margin: 0 0 var(--spacing-sm);
+  }
+
+  .page-header p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin: 0;
+  }
+
+  .content {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .intro {
+    max-width: 800px;
+    margin: 0 auto var(--spacing-lg);
+    text-align: center;
+  }
+
+  .intro p {
+    font-size: 1.125rem;
+    color: var(--color-text-light);
+    line-height: 1.8;
+  }
+
+  .options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+  }
+
+  @media (max-width: 768px) {
+    .options-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .option-card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+  }
+
+  .option-icon {
+    width: 64px;
+    height: 64px;
+    color: var(--color-forest);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .option-card h2 {
+    margin: 0 0 var(--spacing-sm);
+  }
+
+  .option-card p {
+    color: var(--color-text-light);
+    margin: 0 0 var(--spacing-sm);
+  }
+
+  .option-card .small {
+    font-size: 0.875rem;
+    margin-top: var(--spacing-sm);
+  }
+
+  .membership-levels {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+  }
+
+  @media (max-width: 600px) {
+    .membership-levels {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .level {
+    text-align: center;
+    padding: var(--spacing-sm);
+    background: var(--color-cream);
+    border-radius: var(--radius-md);
+  }
+
+  .level .amount {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-forest);
+  }
+
+  .level .label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+  }
+
+  .contact-section {
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-xl);
+    border-top: 1px solid var(--color-earth-light);
+  }
+
+  .contact-section > h2 {
+    text-align: center;
+    margin: 0 0 var(--spacing-sm);
+  }
+
+  .contact-section > p {
+    text-align: center;
+    color: var(--color-text-light);
+    max-width: 600px;
+    margin: 0 auto var(--spacing-lg);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: var(--spacing-lg);
+  }
+
+  @media (max-width: 900px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .contact-form {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+  }
+
+  .form-group {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--color-forest-dark);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--color-earth-light);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s ease;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-forest);
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .info-item {
+    background: var(--color-cream);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+  }
+
+  .info-item h3 {
+    margin: 0 0 var(--spacing-sm);
+    font-size: 1.125rem;
+  }
+
+  .info-item p {
+    margin: 0;
+    color: var(--color-text-light);
+  }
+</style>

@@ -1,0 +1,256 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const newsletters = [
+  { title: "Spring 2024 Newsletter", date: "March 2024", summary: "Updates on recent easements and upcoming events." },
+  { title: "Fall 2023 Newsletter", date: "October 2023", summary: "Annual meeting recap and conservation highlights." },
+  { title: "Spring 2023 Newsletter", date: "April 2023", summary: "New board members and land protection updates." },
+  { title: "Fall 2022 Newsletter", date: "November 2022", summary: "Year in review and donor recognition." },
+  { title: "Spring 2022 Newsletter", date: "March 2022", summary: "Conservation success stories from our community." },
+];
+---
+
+<BaseLayout title="Newsletters">
+  <section class="page-header">
+    <div class="container">
+      <h1>Newsletters</h1>
+      <p>Stay informed about our conservation efforts and community news.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container">
+      <div class="content-grid">
+        <div class="main-content">
+          <p class="intro">Our newsletters keep members and supporters informed about GSSGS activities, conservation successes, upcoming events, and news relevant to land conservation in our area.</p>
+
+          <div class="newsletter-list">
+            {newsletters.map((newsletter) => (
+              <article class="newsletter-item">
+                <div class="newsletter-icon">
+                  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="8" y="6" width="32" height="36" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                    <path d="M14 14H34" stroke="currentColor" stroke-width="2"/>
+                    <path d="M14 22H34" stroke="currentColor" stroke-width="2"/>
+                    <path d="M14 30H26" stroke="currentColor" stroke-width="2"/>
+                  </svg>
+                </div>
+                <div class="newsletter-content">
+                  <h3>{newsletter.title}</h3>
+                  <span class="date">{newsletter.date}</span>
+                  <p>{newsletter.summary}</p>
+                  <a href="#" class="read-link">Read Newsletter →</a>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div class="archive-note">
+            <p>Looking for older newsletters? <a href="/join#contact">Contact us</a> and we'll be happy to send you archived issues.</p>
+          </div>
+        </div>
+
+        <aside class="sidebar">
+          <div class="sidebar-card highlight">
+            <h3>Subscribe to Our Newsletter</h3>
+            <p>Get conservation news delivered to your inbox.</p>
+            <form class="subscribe-form">
+              <input type="email" placeholder="Your email address" required />
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+          </div>
+          <div class="sidebar-card">
+            <h3>Stay Connected</h3>
+            <p>Join our mailing list to receive updates about:</p>
+            <ul>
+              <li>Conservation easement news</li>
+              <li>Community events</li>
+              <li>Volunteer opportunities</li>
+              <li>Environmental education</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--color-forest-dark) 0%, var(--color-forest) 100%);
+    color: var(--color-white);
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    color: var(--color-white);
+    margin: 0 0 var(--spacing-sm);
+  }
+
+  .page-header p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin: 0;
+  }
+
+  .content {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: var(--spacing-lg);
+  }
+
+  @media (max-width: 900px) {
+    .content-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .intro {
+    font-size: 1.125rem;
+    color: var(--color-text-light);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .newsletter-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .newsletter-item {
+    display: flex;
+    gap: var(--spacing-md);
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.2s ease;
+  }
+
+  .newsletter-item:hover {
+    box-shadow: var(--shadow-md);
+  }
+
+  .newsletter-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    color: var(--color-forest);
+  }
+
+  .newsletter-content {
+    flex: 1;
+  }
+
+  .newsletter-content h3 {
+    margin: 0 0 0.25rem;
+    font-size: 1.125rem;
+  }
+
+  .date {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .newsletter-content p {
+    margin: 0 0 var(--spacing-xs);
+    color: var(--color-text-light);
+  }
+
+  .read-link {
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .archive-note {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background: var(--color-cream);
+    border-radius: var(--radius-md);
+  }
+
+  .archive-note p {
+    margin: 0;
+    color: var(--color-text-light);
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .sidebar-card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-md);
+  }
+
+  .sidebar-card.highlight {
+    background: var(--color-forest);
+    color: var(--color-white);
+  }
+
+  .sidebar-card.highlight h3 {
+    color: var(--color-white);
+  }
+
+  .sidebar-card h3 {
+    margin: 0 0 var(--spacing-sm);
+    font-size: 1.25rem;
+  }
+
+  .sidebar-card p {
+    margin: 0 0 var(--spacing-sm);
+    font-size: 0.95rem;
+  }
+
+  .sidebar-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .sidebar-card li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--color-cream);
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+  }
+
+  .sidebar-card li:last-child {
+    border-bottom: none;
+  }
+
+  .subscribe-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .subscribe-form input {
+    padding: 0.75rem;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    font-family: inherit;
+  }
+
+  .subscribe-form .btn-primary {
+    background: var(--color-white);
+    color: var(--color-forest);
+  }
+
+  .subscribe-form .btn-primary:hover {
+    background: var(--color-cream);
+  }
+</style>

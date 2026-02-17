@@ -1,0 +1,190 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const links = [
+  {
+    category: "National Organizations",
+    items: [
+      { name: "Land Trust Alliance", url: "https://landtrustalliance.org", description: "National organization supporting land trusts across America." },
+      { name: "The Nature Conservancy", url: "https://nature.org", description: "Global conservation organization protecting lands and waters." },
+      { name: "American Farmland Trust", url: "https://farmland.org", description: "Organization dedicated to protecting farmland and promoting sound farming practices." },
+    ]
+  },
+  {
+    category: "Maryland Organizations",
+    items: [
+      { name: "Maryland Environmental Trust", url: "https://dnr.maryland.gov/met", description: "State agency that helps landowners protect their land through conservation easements." },
+      { name: "Montgomery Countryside Alliance", url: "https://mocoalliance.org", description: "Coalition working to protect Montgomery County's Agricultural Reserve." },
+      { name: "Chesapeake Bay Foundation", url: "https://cbf.org", description: "Organization dedicated to saving the Chesapeake Bay." },
+    ]
+  },
+  {
+    category: "Government Resources",
+    items: [
+      { name: "Montgomery County Agricultural Services", url: "https://montgomerycountymd.gov/agservices", description: "County resources for farmers and rural landowners." },
+      { name: "USDA Natural Resources Conservation Service", url: "https://nrcs.usda.gov", description: "Federal agency providing conservation assistance to landowners." },
+      { name: "Maryland Department of Natural Resources", url: "https://dnr.maryland.gov", description: "State agency managing Maryland's natural resources." },
+    ]
+  },
+  {
+    category: "Educational Resources",
+    items: [
+      { name: "Conservation Easement Handbook", url: "https://landtrustalliance.org", description: "Comprehensive guide to conservation easements from the Land Trust Alliance." },
+      { name: "IRS Conservation Easement Guidelines", url: "https://irs.gov", description: "Federal tax information related to conservation easement donations." },
+    ]
+  }
+];
+---
+
+<BaseLayout title="Conservation Links">
+  <section class="page-header">
+    <div class="container">
+      <h1>Conservation Links</h1>
+      <p>Resources for learning more about land conservation.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container">
+      <div class="intro">
+        <p>Below are links to organizations and resources that provide additional information about land conservation, conservation easements, and related topics. These organizations are valuable partners in the effort to protect open space.</p>
+      </div>
+
+      <div class="links-container">
+        {links.map((category) => (
+          <div class="link-category">
+            <h2>{category.category}</h2>
+            <div class="links-grid">
+              {category.items.map((link) => (
+                <a href={link.url} class="link-card" target="_blank" rel="noopener noreferrer">
+                  <h3>{link.name}</h3>
+                  <p>{link.description}</p>
+                  <span class="external-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M18 13V19C18 20.1 17.1 21 16 21H5C3.9 21 3 20.1 3 19V8C3 6.9 3.9 6 5 6H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M15 3H21V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="disclaimer">
+        <p><strong>Disclaimer:</strong> These links are provided for informational purposes only. Greater Sandy Spring Green Space is not responsible for the content of external websites. Inclusion of a link does not imply endorsement of the organization or its views.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--color-forest-dark) 0%, var(--color-forest) 100%);
+    color: var(--color-white);
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    color: var(--color-white);
+    margin: 0 0 var(--spacing-sm);
+  }
+
+  .page-header p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin: 0;
+  }
+
+  .content {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .intro {
+    max-width: 800px;
+    margin: 0 auto var(--spacing-lg);
+    text-align: center;
+  }
+
+  .intro p {
+    color: var(--color-text-light);
+    line-height: 1.8;
+  }
+
+  .link-category {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .link-category h2 {
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 2px solid var(--color-meadow);
+  }
+
+  .links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .link-card {
+    display: block;
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s ease;
+    position: relative;
+    color: inherit;
+  }
+
+  .link-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+    color: inherit;
+  }
+
+  .link-card h3 {
+    margin: 0 0 var(--spacing-xs);
+    font-size: 1.125rem;
+    color: var(--color-forest);
+    padding-right: 2rem;
+  }
+
+  .link-card p {
+    margin: 0;
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+  }
+
+  .external-icon {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    width: 20px;
+    height: 20px;
+    color: var(--color-text-light);
+    opacity: 0.5;
+  }
+
+  .link-card:hover .external-icon {
+    opacity: 1;
+    color: var(--color-meadow);
+  }
+
+  .disclaimer {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background: var(--color-cream);
+    border-radius: var(--radius-md);
+  }
+
+  .disclaimer p {
+    margin: 0;
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+  }
+</style>
